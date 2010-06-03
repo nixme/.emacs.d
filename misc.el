@@ -5,6 +5,9 @@
 ;;   Dirk-Jan C. Binnema's dot-emacs: http://www.djcbsoftware.nl/dot-emacs.html
 ;;   others...
 
+;; font: Menlo 11pt
+(set-face-attribute 'default nil :family "Menlo" :height 110)
+
 ;; UTF-8 baby!
 (setq locale-coding-system 'utf-8)
 (set-terminal-coding-system 'utf-8)
