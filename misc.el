@@ -16,6 +16,11 @@
 (prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 
+;; indentation
+(setq-default indent-tabs-mode nil  ;; use spaces for indentation
+              tab-width        4    ;; display tabs as 4 spaces
+              c-basic-offset   4)
+
 ;; modeline
 (line-number-mode t)        ;; show line number in modeline
 (column-number-mode t)      ;; show column number in modeline
