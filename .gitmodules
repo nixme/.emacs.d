@@ -1,3 +1,6 @@
 [submodule "vendor/rvm.el"]
 	path = vendor/rvm.el
 	url = git://github.com/senny/rvm.el.git
+[submodule "vendor/ethan-wspace"]
+	path = vendor/ethan-wspace
+	url = http://github.com/glasserc/ethan-wspace.git

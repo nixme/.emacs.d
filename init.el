@@ -10,6 +10,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
 
 ;; load ELPA
 (require 'package)
@@ -25,6 +26,9 @@
 
 ;; load whitespace
 (require 'whitespace)
+
+;; load ethan-wspace
+(require 'ethan-wspace)
 
 ;; load sr-speedbar
 (require 'sr-speedbar)

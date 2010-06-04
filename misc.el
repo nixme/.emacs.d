@@ -56,14 +56,14 @@
 (set-face-background 'whitespace-tab     nil)
 (global-whitespace-mode t)   ;; enable whitespace-mode everywhere
 
+;; ethan-wspace mode: clean whitespace on save
+(global-ethan-wspace-mode t)
+
 ;; transparently open compressed files
 (auto-compression-mode t)
 
 ;; use unified diffs
 (setq diff-switches "-u")
-
-;; always end files with newline
-(setq require-final-newline t)
 
 ;; use visual bell instead of an annoying sound
 (setq visible-bell t)
