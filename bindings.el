@@ -16,6 +16,13 @@
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
+;; kill line, same as shell
+(defun backward-kill-line (arg)
+  "Kill chars backward until encountering the end of a line."
+  (interactive "p")
+  (kill-line 0))
+(global-set-key (kbd "C-u") 'backward-kill-line)
+
 ;; alias C-h to backspace and redefine help key to C-x ? or C-c ?
 (global-set-key (kbd "C-h") 'backward-delete-char-untabify)
 (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
