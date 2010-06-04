@@ -44,7 +44,17 @@
 (show-paren-mode t)
 (setq show-paren-delay 0)
 
-;; TODO: whitespace mode
+;; whitespace mode: show tabs, newlines, and highlight chars past column 80
+(setq whitespace-style '(trailing tabs newline lines-tail tab-mark newline-mark)
+      whitespace-line-column 80
+      whitespace-display-mappings
+      '(  ;; imitate textmate: triangle for tabs and logical-not for newlines
+        (tab-mark     ?\t [?\u25B8 ?\t] [?\u00BB ?\t] [?\\ ?\t])
+        (newline-mark ?\n [?\u00AC ?\n] [?$ ?\n])))
+(set-face-foreground 'whitespace-newline "grey15")
+(set-face-foreground 'whitespace-tab     "grey15")
+(set-face-background 'whitespace-tab     nil)
+(global-whitespace-mode t)   ;; enable whitespace-mode everywhere
 
 ;; transparently open compressed files
 (auto-compression-mode t)

@@ -23,6 +23,9 @@
 (load (concat dotfiles-dir "vendor/color-theme-twilight.el"))
 (color-theme-twilight)
 
+;; load whitespace
+(require 'whitespace)
+
 ;; load sr-speedbar
 (require 'sr-speedbar)
 
