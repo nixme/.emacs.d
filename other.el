@@ -97,7 +97,7 @@
 ;; ruby-mode
 (eval-after-load 'ruby-mode
   '(progn
-     (add-hook 'ruby-mode-hook 'info-ruby-keys)
+     (add-hook 'ruby-mode-hook 'inf-ruby-keys)
      (setq ruby-deep-indent-paren-style nil)
      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
 (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
