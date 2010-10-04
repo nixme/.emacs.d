@@ -11,6 +11,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
 
 ;; load ELPA
 (require 'package)
@@ -42,6 +43,12 @@
 
 ;; load org-mode
 (require 'org-install)
+
+;; load rainbow-mode
+(require 'rainbow-mode)
+(add-to-list 'auto-mode-alist '("\\.css$"  . rainbow-mode))
+(add-to-list 'auto-mode-alist '("\\.sass$" . rainbow-mode))
+(add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
 
 ;; load extra modes
 (require 'haml-mode)

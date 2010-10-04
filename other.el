@@ -3,6 +3,7 @@
 ;; inspired by:
 ;;   technomancy's emacs-starter-kit: http://github.com/technomancy/emacs-starter-kit
 ;;   Dirk-Jan C. Binnema's dot-emacs: http://www.djcbsoftware.nl/dot-emacs.html
+;;   Steve Purcell's emacs.d: http://github.com/purcell/emacs.d
 ;;   others...
 
 ;; font: Menlo 11pt

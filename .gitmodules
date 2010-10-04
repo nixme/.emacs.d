@@ -4,3 +4,6 @@
 [submodule "vendor/ethan-wspace"]
 	path = vendor/ethan-wspace
 	url = http://github.com/glasserc/ethan-wspace.git
+[submodule "vendor/rainbow-mode"]
+	path = vendor/rainbow-mode
+	url = git://git.naquadah.org/rainbow.git
