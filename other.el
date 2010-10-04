@@ -94,6 +94,19 @@
 			     "~/Dropbox/org/tippd.org"
 			     "~/Dropbox/org/itsababy.org"))
 
+;; ruby-mode
+(eval-after-load 'ruby-mode
+  '(progn
+     (add-hook 'ruby-mode-hook 'info-ruby-keys)
+     (setq ruby-deep-indent-paren-style nil)
+     (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)))
+(add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
+
 ;; disable startup screens
 (setq
   inhibit-startup-message t
