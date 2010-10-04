@@ -10,3 +10,6 @@
 [submodule "vendor/color-theme-twilight"]
 	path = vendor/color-theme-twilight
 	url = http://github.com/crafterm/twilight-emacs.git
+[submodule "vendor/undo-tree"]
+	path = vendor/undo-tree
+	url = http://www.dr-qubit.org/git/undo-tree.git

@@ -13,6 +13,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/undo-tree"))
 
 ;; load ELPA
 (require 'package)
@@ -50,6 +51,10 @@
 (add-to-list 'auto-mode-alist '("\\.css$"  . rainbow-mode))
 (add-to-list 'auto-mode-alist '("\\.sass$" . rainbow-mode))
 (add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
+
+;; load undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
 
 ;; load extra modes
 (require 'haml-mode)
