@@ -7,3 +7,6 @@
 [submodule "vendor/rainbow-mode"]
 	path = vendor/rainbow-mode
 	url = git://git.naquadah.org/rainbow.git
+[submodule "vendor/color-theme-twilight"]
+	path = vendor/color-theme-twilight
+	url = http://github.com/crafterm/twilight-emacs.git

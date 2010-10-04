@@ -9,6 +9,7 @@
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme-twilight"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
@@ -22,7 +23,7 @@
 (eval-after-load "color-theme"
   '(progn
      (color-theme-initialize)))
-(load (concat dotfiles-dir "vendor/color-theme-twilight.el"))
+(load "color-theme-twilight")
 (color-theme-twilight)
 
 ;; load misc
