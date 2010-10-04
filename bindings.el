@@ -11,6 +11,10 @@
 ;; auto-indent on new line
 (global-set-key (kbd "RET") 'newline-and-indent)
 
+;; more familiar forward and backward word
+(global-set-key (kbd "M-f") 'forward-to-word)
+(global-set-key (kbd "M-b") 'backward-to-word)
+
 ;; easy kill word, also behaves same as shell, but need to remap kill-region too
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
@@ -28,6 +32,10 @@
 (define-key isearch-mode-map "\C-h" 'isearch-delete-char)
 (global-set-key (kbd "C-x ?") 'help-command)
 (global-set-key (kbd "C-c ?") 'help-command)
+
+;; find file
+(global-set-key (kbd "C-x f")   'ido-find-file)  ;; I mistakenly type this often
+(global-set-key (kbd "C-x C-f") 'ido-find-file)  ;; implicit when loading ido
 
 ;; alternatives to M-x, eval command (also based on Yegge)
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)

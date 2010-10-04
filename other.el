@@ -99,4 +99,4 @@
   inhibit-startup-message t
   inhibit-startup-echo-area-message t)
 
-(provide 'misc)
+(provide 'other)

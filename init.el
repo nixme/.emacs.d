@@ -24,6 +24,9 @@
 (load (concat dotfiles-dir "vendor/color-theme-twilight.el"))
 (color-theme-twilight)
 
+;; load misc
+(require 'misc)
+
 ;; load whitespace
 (require 'whitespace)
 
@@ -46,4 +49,4 @@
 
 ;; load other customizations
 (require 'bindings)
-(require 'misc)
+(require 'other)
