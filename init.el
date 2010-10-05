@@ -14,6 +14,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/undo-tree"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
 
 ;; load ELPA
 (require 'package)
@@ -55,6 +56,12 @@
 ;; load undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+;; load yasnippets
+(require 'yasnippet)
+(yas/initialize)
+(yas/load-directory (concat dotfiles-dir "/vendor/yasnippet/snippets"))
+(yas/load-directory (concat dotfiles-dir "/snippets"))
 
 ;; load extra modes
 (require 'haml-mode)
