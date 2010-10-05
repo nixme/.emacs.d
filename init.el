@@ -14,6 +14,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/undo-tree"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/autopair"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
 
 ;; load ELPA
@@ -56,6 +57,10 @@
 ;; load undo-tree
 (require 'undo-tree)
 (global-undo-tree-mode)
+
+;; load autopair
+(require 'autopair)
+(autopair-global-mode)
 
 ;; load yasnippets
 (require 'yasnippet)

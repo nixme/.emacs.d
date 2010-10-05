@@ -16,3 +16,6 @@
 [submodule "vendor/yasnippet"]
 	path = vendor/yasnippet
 	url = http://github.com/emacsmirror/yasnippet.git
+[submodule "vendor/autopair"]
+	path = vendor/autopair
+	url = http://github.com/emacsmirror/autopair.git
