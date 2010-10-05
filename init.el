@@ -16,6 +16,7 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/undo-tree"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/autopair"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/eproject"))
 
 ;; load ELPA
 (require 'package)
@@ -67,6 +68,11 @@
 (yas/initialize)
 (yas/load-directory (concat dotfiles-dir "/vendor/yasnippet/snippets"))
 (yas/load-directory (concat dotfiles-dir "/snippets"))
+
+;; load eproject
+(require 'eproject)
+(require 'eproject-extras)
+(define-project-type ruby (generic) (look-for "Gemfile"))
 
 ;; load extra modes
 (require 'haml-mode)

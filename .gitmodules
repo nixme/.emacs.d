@@ -22,3 +22,6 @@
 [submodule "vendor/color-theme"]
 	path = vendor/color-theme
 	url = http://github.com/emacsmirror/color-theme.git
+[submodule "vendor/eproject"]
+	path = vendor/eproject
+	url = git://github.com/jrockway/eproject.git
