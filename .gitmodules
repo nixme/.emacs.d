@@ -19,3 +19,6 @@
 [submodule "vendor/autopair"]
 	path = vendor/autopair
 	url = http://github.com/emacsmirror/autopair.git
+[submodule "vendor/color-theme"]
+	path = vendor/color-theme
+	url = http://github.com/emacsmirror/color-theme.git

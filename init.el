@@ -25,9 +25,9 @@
 (require 'color-theme)
 (eval-after-load "color-theme"
   '(progn
-     (color-theme-initialize)))
-(load "color-theme-twilight")
-(color-theme-twilight)
+     (color-theme-initialize)
+     (load "color-theme-twilight")
+     (color-theme-twilight)))
 
 ;; load misc
 (require 'misc)
