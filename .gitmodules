@@ -25,3 +25,9 @@
 [submodule "vendor/eproject"]
 	path = vendor/eproject
 	url = git://github.com/jrockway/eproject.git
+[submodule "vendor/haml-mode"]
+	path = vendor/haml-mode
+	url = http://github.com/nex3/haml-mode.git
+[submodule "vendor/sass-mode"]
+	path = vendor/sass-mode
+	url = http://github.com/nex3/sass-mode.git

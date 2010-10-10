@@ -17,6 +17,8 @@
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/autopair"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/eproject"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/haml-mode"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/sass-mode"))
 
 ;; load ELPA
 (require 'package)
