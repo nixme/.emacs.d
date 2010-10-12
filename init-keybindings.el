@@ -1,8 +1,4 @@
-;;; bindings.el - my custom keybindings
-;;
-;; inspired by:
-;;   technomancy's emacs-starter-kit: http://github.com/technomancy/emacs-starter-kit
-;;   Steve Yegge's recommendations: http://sites.google.com/site/steveyegge2/effective-emacs
+;;; init-keybindings.el - all keybindings in one place for easy reference
 
 
 ;; make Cmd key act as Meta
@@ -64,13 +60,30 @@
 ;; Window switching
 (windmove-default-keybindings)  ;; shift + arrow keys
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;; Mode-specific bindings
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-(provide 'bindings)
+;; eproject
+;;   expanded from http://github.com/jrockway/eproject/wiki/InstallingEproject
+;;   for readability
+(global-set-key (kbd "C-x p v") (lambda nil (interactive)
+                                  (eproject-revisit-project 4)))
+(global-set-key (kbd "C-x p V") (lambda nil (interactive)
+                                  (eproject-revisit-project 1)))
+(define-key eproject-mode-map (kbd "C-x p k")
+  (lambda nil (interactive) (eproject-kill-project-buffers 4)))
+(define-key eproject-mode-map (kbd "C-x p K")
+  (lambda nil (interactive) (eproject-kill-project-buffers 1)))
+(define-key eproject-mode-map (kbd "C-x p b")
+  (lambda nil (interactive) (eproject-ibuffer 4)))
+(define-key eproject-mode-map (kbd "C-x p B")
+  (lambda nil (interactive) (eproject-ibuffer 1)))
+(define-key eproject-mode-map (kbd "C-x p o")
+  (lambda nil (interactive) (eproject-open-all-project-files 4)))
+(define-key eproject-mode-map (kbd "C-x p O")
+  (lambda nil (interactive) (eproject-open-all-project-files 1)))
+(define-key eproject-mode-map (kbd "C-x p c") 'eproject-eshell-cd-here)
+
+
+(provide 'init-keybindings)

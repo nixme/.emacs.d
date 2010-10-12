@@ -1,87 +1,37 @@
+;;; init.el - it starts here
+;;
+;; "I'm using Linux. A library that emacs uses to communicate
+;;  with Intel hardware." -- Erwin on #emacs
+;;
+;; configuration inspired by:
+;;   technomancy: http://github.com/technomancy/emacs-starter-kit
+;;   Dirk-Jan C. Binnema: http://www.djcbsoftware.nl/dot-emacs.html
+;;   Steve Purcell: http://github.com/purcell/emacs.d
+;;   Steve Yegge: http://sites.google.com/site/steveyegge2/effective-emacs
+;;   others...
 
-;; turn off menu and toolbar
-;; TODO: only turn off menu bar if in terminal
-;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 
 ;; setup load path
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme-twilight"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/sr-speedbar"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/undo-tree"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/autopair"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/yasnippet"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/eproject"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/haml-mode"))
-(add-to-list 'load-path (concat dotfiles-dir "/vendor/sass-mode"))
+(let ((default-directory (concat dotfiles-dir "/site-lisp/")))
+  (normal-top-level-add-to-load-path '("."))
+  (normal-top-level-add-subdirs-to-load-path))
 
 ;; load ELPA
 (require 'package)
 (package-initialize)
 
-;; load color theme
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (load "color-theme-twilight")
-     (color-theme-twilight)))
-
-;; load misc
+;; common libraries
+(require 'cl)
 (require 'misc)
 
-;; load whitespace
-(require 'whitespace)
-
-;; load ethan-wspace
-(require 'ethan-wspace)
-
-;; load sr-speedbar
-(require 'sr-speedbar)
-(setq sr-speedbar-auto-refresh nil)  ;; don't refresh on directory change
-
-;; load rvm.el
-(require 'rvm)
-(rvm-use-default)
-
-;; load org-mode
-(require 'org-install)
-
-;; load rainbow-mode
-(require 'rainbow-mode)
-(add-to-list 'auto-mode-alist '("\\.css$"  . rainbow-mode))
-(add-to-list 'auto-mode-alist '("\\.sass$" . rainbow-mode))
-(add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
-
-;; load undo-tree
-(require 'undo-tree)
-(global-undo-tree-mode)
-
-;; load autopair
-(require 'autopair)
-(autopair-global-mode)
-
-;; load yasnippets
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory (concat dotfiles-dir "/vendor/yasnippet/snippets"))
-(yas/load-directory (concat dotfiles-dir "/snippets"))
-
-;; load eproject
-(require 'eproject)
-(require 'eproject-extras)
-(define-project-type ruby (generic) (look-for "Gemfile"))
-(setq eproject-completing-read-function 'eproject--ido-completing-read)
-
-;; load extra modes
-(require 'haml-mode)
-(require 'sass-mode)
-
-;; load other customizations
-(require 'bindings)
-(require 'other)
+;; load all customizations
+(require 'init-ido)
+(require 'init-speedbar)
+(require 'init-eproject)
+(require 'init-yasnippet)
+(require 'init-ruby)
+(require 'init-org-mode)
+(require 'init-misc)
+(require 'init-keybindings)

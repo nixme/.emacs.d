@@ -1,36 +1,36 @@
-[submodule "vendor/rvm.el"]
-	path = vendor/rvm.el
+[submodule "site-lisp/rvm"]
+	path = site-lisp/rvm
 	url = git://github.com/senny/rvm.el.git
-[submodule "vendor/ethan-wspace"]
-	path = vendor/ethan-wspace
+[submodule "site-lisp/ethan-wspace"]
+	path = site-lisp/ethan-wspace
 	url = http://github.com/glasserc/ethan-wspace.git
-[submodule "vendor/rainbow-mode"]
-	path = vendor/rainbow-mode
+[submodule "site-lisp/rainbow-mode"]
+	path = site-lisp/rainbow-mode
 	url = git://git.naquadah.org/rainbow.git
-[submodule "vendor/color-theme-twilight"]
-	path = vendor/color-theme-twilight
+[submodule "site-lisp/color-theme-twilight"]
+	path = site-lisp/color-theme-twilight
 	url = http://github.com/crafterm/twilight-emacs.git
-[submodule "vendor/undo-tree"]
-	path = vendor/undo-tree
+[submodule "site-lisp/undo-tree"]
+	path = site-lisp/undo-tree
 	url = http://www.dr-qubit.org/git/undo-tree.git
-[submodule "vendor/yasnippet"]
-	path = vendor/yasnippet
+[submodule "site-lisp/yasnippet"]
+	path = site-lisp/yasnippet
 	url = http://github.com/emacsmirror/yasnippet.git
-[submodule "vendor/autopair"]
-	path = vendor/autopair
+[submodule "site-lisp/autopair"]
+	path = site-lisp/autopair
 	url = http://github.com/emacsmirror/autopair.git
-[submodule "vendor/color-theme"]
-	path = vendor/color-theme
+[submodule "site-lisp/color-theme"]
+	path = site-lisp/color-theme
 	url = http://github.com/emacsmirror/color-theme.git
-[submodule "vendor/eproject"]
-	path = vendor/eproject
+[submodule "site-lisp/eproject"]
+	path = site-lisp/eproject
 	url = git://github.com/jrockway/eproject.git
-[submodule "vendor/haml-mode"]
-	path = vendor/haml-mode
+[submodule "site-lisp/haml-mode"]
+	path = site-lisp/haml-mode
 	url = http://github.com/nex3/haml-mode.git
-[submodule "vendor/sass-mode"]
-	path = vendor/sass-mode
+[submodule "site-lisp/sass-mode"]
+	path = site-lisp/sass-mode
 	url = http://github.com/nex3/sass-mode.git
-[submodule "vendor/sr-speedbar"]
-	path = vendor/sr-speedbar
+[submodule "site-lisp/sr-speedbar"]
+	path = site-lisp/sr-speedbar
 	url = http://github.com/emacsmirror/sr-speedbar.git
