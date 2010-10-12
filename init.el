@@ -7,11 +7,11 @@
 ;; setup load path
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
-(add-to-list 'load-path (concat dotfiles-dir "/vendor"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/color-theme-twilight"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rvm.el"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/ethan-wspace/lisp"))
+(add-to-list 'load-path (concat dotfiles-dir "/vendor/sr-speedbar"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/rainbow-mode"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/undo-tree"))
 (add-to-list 'load-path (concat dotfiles-dir "/vendor/autopair"))
