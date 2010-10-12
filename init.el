@@ -43,6 +43,7 @@
 
 ;; load sr-speedbar
 (require 'sr-speedbar)
+(setq sr-speedbar-auto-refresh nil)  ;; don't refresh on directory change
 
 ;; load rvm.el
 (require 'rvm)
