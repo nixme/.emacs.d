@@ -75,6 +75,7 @@
 (require 'eproject)
 (require 'eproject-extras)
 (define-project-type ruby (generic) (look-for "Gemfile"))
+(setq eproject-completing-read-function 'eproject--ido-completing-read)
 
 ;; load extra modes
 (require 'haml-mode)
