@@ -1,10 +1,14 @@
 ;; init-misc.el - other modes, extensions, and customizations
 
 
-;; turn off menu and toolbar
-;; TODO: only turn off menu bar if in terminal
-;; (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;; turn off toolbars
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+
+;; turn off menus unless on OS X with a GUI
+(if (and (fboundp 'menu-bar-mode)
+         (not (and (eq system-type 'darwin)
+                   window-system)))
+    (menu-bar-mode -1))
 
 ;; font: Menlo 11pt
 (set-face-attribute 'default nil :family "Menlo" :height 110)
