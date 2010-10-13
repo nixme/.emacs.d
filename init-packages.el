@@ -30,7 +30,9 @@
 
         ;; appearance
         color-theme
-        color-theme-twilight
+        (:name theme-roller
+               :type git :url "http://github.com/senny/theme-roller.el.git"
+               :features theme-roller)
         (:name idle-highlight :type elpa)
 
         ;; web, html, js, css, etc.
