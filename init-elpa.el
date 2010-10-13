@@ -1,4 +1,6 @@
 ;;; init-elpa.el - setup emacs packages via elpa
+;;
+;; based on technomancy's emacs-starter-kit's starter-kit-elpa.el
 
 
 ;; start ELPA

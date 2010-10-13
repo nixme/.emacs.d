@@ -19,10 +19,6 @@
   (normal-top-level-add-to-load-path '("."))
   (normal-top-level-add-subdirs-to-load-path))
 
-;; load ELPA
-(require 'package)
-(package-initialize)
-
 ;; common libraries
 (require 'cl)
 (require 'misc)
