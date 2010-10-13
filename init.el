@@ -15,16 +15,14 @@
 (setq dotfiles-dir (file-name-directory (or (buffer-file-name) load-file-name)))
 (add-to-list 'load-path dotfiles-dir)
 (add-to-list 'load-path (concat dotfiles-dir "/elpa"))
-(let ((default-directory (concat dotfiles-dir "/site-lisp/")))
-  (normal-top-level-add-to-load-path '("."))
-  (normal-top-level-add-subdirs-to-load-path))
+(add-to-list 'load-path (concat dotfiles-dir "/el-get/el-get"))
 
 ;; common libraries
 (require 'cl)
 (require 'misc)
 
 ;; load all customizations
-(require 'init-elpa)
+(require 'init-packages)
 (require 'init-ido)
 (require 'init-speedbar)
 (require 'init-eproject)
