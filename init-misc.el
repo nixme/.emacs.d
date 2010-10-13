@@ -64,6 +64,9 @@
 ;; use visual bell instead of an annoying sound
 (setq visible-bell t)
 
+;; let me use 'y' or 'n' to answer all questions cause i'm lazy
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 ;; disable startup screens
 (setq
   inhibit-startup-message t
