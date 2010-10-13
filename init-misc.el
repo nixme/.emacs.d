@@ -72,13 +72,6 @@
   inhibit-startup-message t
   inhibit-startup-echo-area-message t)
 
-;; color theme
-(eval-after-load 'color-theme
-  '(progn
-     (color-theme-initialize)
-     (load "color-theme-twilight")
-     (color-theme-twilight)))
-
 ;; whitespace mode: show tabs, newlines, and highlight chars past column 80
 (require 'whitespace)
 (setq whitespace-style '(trailing tabs newline lines-tail tab-mark newline-mark)
