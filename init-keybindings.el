@@ -65,25 +65,31 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 
 ;; eproject
-;;   expanded from http://github.com/jrockway/eproject/wiki/InstallingEproject
-;;   for readability
-(global-set-key (kbd "C-x p v") (lambda nil (interactive)
+;;   C-c  f      current project find file
+;;   C-c C-f     current project find file (defined in eproject-extras.el)
+;;   C-c  b      current project ibuffer
+;;   C-c C-b     current project ibuffer   (defined in eproject-extras.el)
+;;   C-c C-c     current project eshell
+;;   C-c C-o     current project open all files
+;;   C-c  p  f   any project find file
+;;   C-c  p  b   any project ibuffer
+;;   C-c  p  o   any project open all files
+;;   C-c  p  k   any project kill all files
+;;   C-c  p  v   any project visit directory
+(define-key eproject-mode-map (kbd "C-c f")   'eproject-find-file)
+(define-key eproject-mode-map (kbd "C-c b")   'eproject-ibuffer)
+(define-key eproject-mode-map (kbd "C-c C-c") 'eproject-eshell-cd-here)
+(define-key eproject-mode-map (kbd "C-c C-o") 'eproject-open-all-project-files)
+(global-set-key (kbd "C-c p f") (lambda () (interactive)
                                   (eproject-revisit-project 4)))
-(global-set-key (kbd "C-x p V") (lambda nil (interactive)
+(global-set-key (kbd "C-c p b") (lambda () (interactive)
+                                  (eproject-ibuffer 4)))
+(global-set-key (kbd "C-c p o") (lambda () (interactive)
+                                  (eproject-open-all-project-files 4)))
+(global-set-key (kbd "C-c p k") (lambda () (interactive)
+                                  (eproject-kill-project-buffers 4)))
+(global-set-key (kbd "C-c p v") (lambda () (interactive)
                                   (eproject-revisit-project 1)))
-(define-key eproject-mode-map (kbd "C-x p k")
-  (lambda nil (interactive) (eproject-kill-project-buffers 4)))
-(define-key eproject-mode-map (kbd "C-x p K")
-  (lambda nil (interactive) (eproject-kill-project-buffers 1)))
-(define-key eproject-mode-map (kbd "C-x p b")
-  (lambda nil (interactive) (eproject-ibuffer 4)))
-(define-key eproject-mode-map (kbd "C-x p B")
-  (lambda nil (interactive) (eproject-ibuffer 1)))
-(define-key eproject-mode-map (kbd "C-x p o")
-  (lambda nil (interactive) (eproject-open-all-project-files 4)))
-(define-key eproject-mode-map (kbd "C-x p O")
-  (lambda nil (interactive) (eproject-open-all-project-files 1)))
-(define-key eproject-mode-map (kbd "C-x p c") 'eproject-eshell-cd-here)
 
 
 (provide 'init-keybindings)
