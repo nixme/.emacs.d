@@ -1,8 +1,6 @@
 ;; init-speedbar.el - customizations for speedbar and sr-speedbar
 
 
-(require 'sr-speedbar)
-
 ;; show all files
 (setq speedbar-show-unknown-files t)
 

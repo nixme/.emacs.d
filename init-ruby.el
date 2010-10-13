@@ -3,8 +3,6 @@
 
 (eval-after-load 'ruby-mode
   '(progn
-     (add-hook 'ruby-mode-hook 'inf-ruby-keys)
-
      ;; stop the crazy indentation
      (setq ruby-deep-indent-paren-style nil)
 
@@ -20,8 +18,7 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 
 ;; rvm.el
-(require 'rvm)
-(rvm-use-default)
+(eval-after-load 'rvm '(rvm-use-default))
 
 
 (provide 'init-ruby)

@@ -1,9 +1,6 @@
 ;; init-eproject.el - customizations for eproject
 
 
-(require 'eproject)
-(require 'eproject-extras)
-
 ;; define other project types
 (define-project-type ruby (generic) (look-for "Gemfile"))
 

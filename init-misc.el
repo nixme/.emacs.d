@@ -73,8 +73,7 @@
   inhibit-startup-echo-area-message t)
 
 ;; color theme
-(require 'color-theme)
-(eval-after-load "color-theme"
+(eval-after-load 'color-theme
   '(progn
      (color-theme-initialize)
      (load "color-theme-twilight")
@@ -94,29 +93,21 @@
 (global-whitespace-mode t)   ;; enable whitespace-mode everywhere
 
 ;; ethan-wspace: cleanup whitespace on every save
-(require 'ethan-wspace)
-(global-ethan-wspace-mode t)
+(eval-after-load 'ethan-wspace '(global-ethan-wspace-mode t))
 
 ;; uniquify: better names for duplicate buffers
 (require 'uniquify)
 
 ;; undo-tree: saner undo and fancy edit history visualization
-(require 'undo-tree)
-(global-undo-tree-mode)
+(eval-after-load 'undo-tree '(global-undo-tree-mode))
 
 ;; autopair: electric punctuation insertion
-(require 'autopair)
-(autopair-global-mode)
+(eval-after-load 'autopair '(autopair-global-mode))
 
 ;; rainbow-mode: color previews in css/html
-(require 'rainbow-mode)
 (add-to-list 'auto-mode-alist '("\\.css$"  . rainbow-mode))
 (add-to-list 'auto-mode-alist '("\\.sass$" . rainbow-mode))
 (add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
-
-;; other modes. TODO: use autoloads instead
-(require 'haml-mode)
-(require 'sass-mode)
 
 
 (provide 'init-misc)

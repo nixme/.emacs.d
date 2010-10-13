@@ -13,22 +13,24 @@
       el-get-sources
       '(
         ;; basics, editing, projects
-        autopair
-        undo-tree
-        yasnippet
+        (:name autopair  :features autopair)
+        (:name undo-tree :features undo-tree)
+        (:name yasnippet :features yasnippet)
         (:name eproject
-               :type git :url "http://github.com/jrockway/eproject.git")
+               :type git :url "http://github.com/jrockway/eproject.git"
+               :features (eproject eproject-extras))
         (:name ethan-wspace
                :type git :url "http://github.com/glasserc/ethan-wspace.git"
-               :load-path ("lisp"))
-        (:name sr-speedbar   :type emacswiki)
+               :load-path ("lisp")
+               :features ethan-wspace)
+        (:name sr-speedbar   :type emacswiki :features sr-speedbar)
         (:name full-ack      :type elpa)
         (:name hungry-delete :type elpa)
+        switch-window
 
         ;; appearance
         color-theme
-        (:name color-theme-twilight
-               :type git :url "http://github.com/crafterm/twilight-emacs.git")
+        color-theme-twilight
         (:name idle-highlight :type elpa)
 
         ;; web, html, js, css, etc.
@@ -38,11 +40,13 @@
         ;; ruby, rails, etc.
         (:name ruby-mode :type elpa)
         (:name inf-ruby  :type elpa)
-        (:name yaml-mode :type elpa)
-        (:name haml-mode :type elpa)
-        (:name sass-mode :type elpa)
         (:name rvm
-               :type git :url "http://github.com/senny/rvm.el.git")
+               :type git :url "http://github.com/senny/rvm.el.git"
+               :features rvm)
+        rinari
+        (:name yaml-mode :type elpa)
+        (:name haml-mode :type elpa :features haml-mode)
+        (:name sass-mode :type elpa :features sass-mode)
 
         ;; version control
         gist
@@ -53,7 +57,11 @@
                :build ("make all")
                :build/darwin
                ("PATH=~/Applications/Emacs.app/Contents/MacOS:$PATH make all")
-               :features magit)))
+               :features magit)
+
+        ;; other
+        google-maps
+        google-weather))
 
 ;; ensure packages are installed and loaded
 (el-get 'sync)

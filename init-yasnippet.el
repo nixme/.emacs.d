@@ -1,8 +1,6 @@
 ;; init-yasnippet.el
 
 
-(require 'yasnippet)
-
 (yas/initialize)
 
 ;; load included snippets
