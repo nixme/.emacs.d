@@ -46,9 +46,9 @@
                :type git :url "http://github.com/senny/rvm.el.git"
                :features rvm)
         rinari
-        (:name yaml-mode :type elpa)
-        (:name haml-mode :type elpa :features haml-mode)
-        (:name sass-mode :type elpa :features sass-mode)
+        (:name yaml-mode :type elpa :features yaml-mode)
+        (:name haml-mode :type elpa)
+        (:name sass-mode :type elpa)
 
         ;; version control
         gist
