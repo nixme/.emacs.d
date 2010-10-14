@@ -60,6 +60,7 @@
                :build/darwin
                ("PATH=~/Applications/Emacs.app/Contents/MacOS:$PATH make all")
                :features magit)
+        (:name magithub :type git :url "http://github.com/nex3/magithub.git")
 
         ;; other
         google-maps
