@@ -57,8 +57,12 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)           ;; use ibuffer instead of buffer-list
 (global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
 
-;; Window switching
+;; window management
 (windmove-default-keybindings)  ;; shift + arrow keys
+(global-set-key (kbd "S-M-<left>")  'shrink-window-horizontally)
+(global-set-key (kbd "S-M-<right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "S-M-<down>")  'shrink-window)
+(global-set-key (kbd "S-M-<up>")    'enlarge-window)
 
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
@@ -71,24 +75,24 @@
 ;;   C-c C-b     current project ibuffer   (defined in eproject-extras.el)
 ;;   C-c C-c     current project eshell
 ;;   C-c C-o     current project open all files
-;;   C-c  p  f   any project find file
-;;   C-c  p  b   any project ibuffer
-;;   C-c  p  o   any project open all files
-;;   C-c  p  k   any project kill all files
-;;   C-c  p  v   any project visit directory
+;;   C-x  p  f   any project find file
+;;   C-x  p  b   any project ibuffer
+;;   C-x  p  o   any project open all files
+;;   C-x  p  k   any project kill all files
+;;   C-x  p  v   any project visit directory
 (define-key eproject-mode-map (kbd "C-c f")   'eproject-find-file)
 (define-key eproject-mode-map (kbd "C-c b")   'eproject-ibuffer)
 (define-key eproject-mode-map (kbd "C-c C-c") 'eproject-eshell-cd-here)
 (define-key eproject-mode-map (kbd "C-c C-o") 'eproject-open-all-project-files)
-(global-set-key (kbd "C-c p f") (lambda () (interactive)
+(global-set-key (kbd "C-x p f") (lambda () (interactive)
                                   (eproject-revisit-project 4)))
-(global-set-key (kbd "C-c p b") (lambda () (interactive)
+(global-set-key (kbd "C-x p b") (lambda () (interactive)
                                   (eproject-ibuffer 4)))
-(global-set-key (kbd "C-c p o") (lambda () (interactive)
+(global-set-key (kbd "C-x p o") (lambda () (interactive)
                                   (eproject-open-all-project-files 4)))
-(global-set-key (kbd "C-c p k") (lambda () (interactive)
+(global-set-key (kbd "C-x p k") (lambda () (interactive)
                                   (eproject-kill-project-buffers 4)))
-(global-set-key (kbd "C-c p v") (lambda () (interactive)
+(global-set-key (kbd "C-x p v") (lambda () (interactive)
                                   (eproject-revisit-project 1)))
 
 
