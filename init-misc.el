@@ -105,5 +105,11 @@
 (add-to-list 'auto-mode-alist '("\\.sass$" . rainbow-mode))
 (add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
 
+;; coffee-mode: for coffeescript files
+(autoload 'coffee-mode "coffee-mode"
+  "Major mode for editing CoffeeScript files" t nil)
+(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
+(add-to-list 'auto-mode-alist '("Cakefile"   . coffee-mode))
+
 
 (provide 'init-misc)

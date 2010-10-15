@@ -37,6 +37,8 @@
 
         ;; web, html, js, css, etc.
         (:name css-mode :type elpa)
+        (:name coffee-mode
+               :type git :url "http://github.com/defunkt/coffee-mode.git")
         rainbow-mode
 
         ;; ruby, rails, etc.
