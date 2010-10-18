@@ -110,6 +110,8 @@
   "Major mode for editing CoffeeScript files" t nil)
 (add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
 (add-to-list 'auto-mode-alist '("Cakefile"   . coffee-mode))
+(add-hook 'coffee-mode-hook  ;; use two spaces for indenting
+          '(lambda () (set (make-local-variable 'tab-width) 2)))
 
 
 (provide 'init-misc)
