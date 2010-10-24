@@ -40,6 +40,8 @@
         (:name coffee-mode
                :type git :url "http://github.com/defunkt/coffee-mode.git")
         rainbow-mode
+        (:name markdown-mode
+               :type git :url "http://jblevins.org/git/markdown-mode.git")
 
         ;; ruby, rails, etc.
         (:name ruby-mode :type elpa)
@@ -73,6 +75,12 @@
 
 ;; TODO: add el-get-update-all fun from
 ;;   http://github.com/purcell/emacs.d/blob/master/init-el-get.el
+
+;; autoloads for packages that don't provide them
+(autoload 'markdown-mode "markdown-mode"
+  "Major mode for editing Markdown documents" t nil)
+(add-to-list 'auto-mode-alist '("\\.md$"       . markdown-mode))
+(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 
 (provide 'init-packages)
