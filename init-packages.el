@@ -26,6 +26,8 @@
         (:name sr-speedbar   :type emacswiki :features sr-speedbar)
         (:name full-ack      :type elpa)
         (:name hungry-delete :type elpa)
+        (:name smex          :type elpa
+               :features smex :after (lambda () (smex-initialize)))
         switch-window
 
         ;; appearance

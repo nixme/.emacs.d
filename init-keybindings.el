@@ -33,9 +33,11 @@
 (global-set-key (kbd "C-x f")   'ido-find-file)  ;; I mistakenly type this often
 (global-set-key (kbd "C-x C-f") 'ido-find-file)  ;; implicit when loading ido
 
-;; alternatives to M-x, eval command (also based on Yegge)
-(global-set-key (kbd "C-x C-m") 'execute-extended-command)
-(global-set-key (kbd "C-c C-m") 'execute-extended-command)
+;; ido-completing M-x using smex + easier keybindings based on Yegge rec
+(global-set-key (kbd "M-x")     'smex)
+(global-set-key (kbd "C-x C-m") 'smex)
+(global-set-key (kbd "C-c C-m") 'smex)
+(global-set-key (kbd "M-X")     'smex-major-mode-commands)
 
 ;; align code
 (global-set-key (kbd "C-x \\") 'align-regexp)
