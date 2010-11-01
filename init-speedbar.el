@@ -13,5 +13,7 @@
 ;; don't refresh on buffer changes
 (setq sr-speedbar-auto-refresh nil)
 
+;; disable line numbers in the speedbar frame
+(add-to-list 'linum-disabled-modes-list '(speedbar-mode))
 
 (provide 'init-speedbar)

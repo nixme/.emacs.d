@@ -23,6 +23,7 @@
                :type git :url "http://github.com/glasserc/ethan-wspace.git"
                :load-path ("lisp")
                :features ethan-wspace)
+        (:name linum-off     :type emacswiki :features linum-off)
         (:name sr-speedbar   :type emacswiki :features sr-speedbar)
         (:name full-ack      :type elpa)
         (:name hungry-delete :type elpa)
