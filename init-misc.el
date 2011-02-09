@@ -113,5 +113,7 @@
 (add-hook 'coffee-mode-hook  ;; use two spaces for indenting
           '(lambda () (set (make-local-variable 'tab-width) 2)))
 
+;; sh-mode for .zsh files
+(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
 
 (provide 'init-misc)
