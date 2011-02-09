@@ -72,8 +72,8 @@
   inhibit-startup-message t
   inhibit-startup-echo-area-message t)
 
-;; twilight colors via color-theme and theme-roller
-(eval-after-load 'theme-roller '(color-theme-twilight))
+;; ir-black colors via color-theme and theme-roller
+(eval-after-load 'theme-roller '(color-theme-ir-black))
 
 ;; whitespace mode: show tabs, newlines, and highlight chars past column 80
 (require 'whitespace)
@@ -83,8 +83,8 @@
       '(  ;; imitate textmate: triangle for tabs and logical-not for newlines
         (tab-mark     ?\t [?\u25B8 ?\t] [?\u00BB ?\t] [?\\ ?\t])
         (newline-mark ?\n [?\u00AC ?\n] [?$ ?\n])))
-(set-face-foreground 'whitespace-newline "grey15")
-(set-face-foreground 'whitespace-tab     "grey15")
+(set-face-foreground 'whitespace-newline "grey21")
+(set-face-foreground 'whitespace-tab     "grey21")
 (set-face-background 'whitespace-tab     nil)
 (global-whitespace-mode t)   ;; enable whitespace-mode everywhere
 
