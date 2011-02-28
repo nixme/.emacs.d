@@ -41,6 +41,9 @@
 (global-hl-line-mode t)
 (set-face-background 'hl-line "#000000")
 
+;; vertical bar cursor
+(set-default 'cursor-type 'bar)
+
 ;; auto-replace selection with keypress
 (delete-selection-mode t)
 
