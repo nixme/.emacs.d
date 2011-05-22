@@ -111,10 +111,6 @@
 (add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
 
 ;; coffee-mode: for coffeescript files
-(autoload 'coffee-mode "coffee-mode"
-  "Major mode for editing CoffeeScript files" t nil)
-(add-to-list 'auto-mode-alist '("\\.coffee$" . coffee-mode))
-(add-to-list 'auto-mode-alist '("Cakefile"   . coffee-mode))
 (add-hook 'coffee-mode-hook  ;; use two spaces for indenting
           '(lambda () (set (make-local-variable 'tab-width) 2)))
 

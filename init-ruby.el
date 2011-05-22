@@ -18,13 +18,5 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Vagrantfile$" . ruby-mode))
 
-;; rvm.el
-(eval-after-load 'rvm '(rvm-use-default))
-
-;; yaml-mode: elpa package doesn't have autoloads so add here manually
-(autoload 'yaml-mode "yaml-mode" "Major mode for editing YAML files." t nil)
-(add-to-list 'auto-mode-alist '("\\.yml$"  . yaml-mode))
-(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
-
 
 (provide 'init-ruby)

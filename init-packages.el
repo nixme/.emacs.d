@@ -5,6 +5,8 @@
 
 ;; start ELPA
 (require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
 ;; set dependencies for el-get
@@ -13,61 +15,47 @@
       el-get-sources
       '(
         ;; basics, editing, projects
-        (:name autopair  :features autopair)
+        autopair
+        yasnippet
+        ethan-wspace
+        full-ack
+        smex
+        switch-window
         (:name undo-tree :features undo-tree)
-        (:name yasnippet :features yasnippet)
+        (:name hungry-delete :type elpa)
+        (:name sr-speedbar   :type emacswiki :features sr-speedbar)
+        (:name linum-off
+               :type elpa
+               :after (lambda() (require 'linum-off)))
         (:name eproject
                :type git :url "http://github.com/jrockway/eproject.git"
                :features (eproject eproject-extras))
-        (:name ethan-wspace
-               :type git :url "http://github.com/glasserc/ethan-wspace.git"
-               :load-path ("lisp")
-               :features ethan-wspace)
-        (:name linum-off     :type emacswiki :features linum-off)
-        (:name sr-speedbar   :type emacswiki :features sr-speedbar)
-        (:name full-ack      :type elpa)
-        (:name hungry-delete :type elpa)
-        (:name smex          :type elpa
-               :features smex :after (lambda () (smex-initialize)))
-        switch-window
 
         ;; appearance
         color-theme
-        (:name theme-roller
-               :type git :url "http://github.com/senny/theme-roller.el.git"
-               :features theme-roller)
+        theme-roller
         (:name idle-highlight :type elpa)
 
         ;; web, html, js, css, etc.
         (:name css-mode :type elpa)
-        (:name coffee-mode
-               :type git :url "http://github.com/defunkt/coffee-mode.git")
+        coffee-mode
         rainbow-mode
-        (:name markdown-mode
-               :type git :url "http://jblevins.org/git/markdown-mode.git")
+        markdown-mode
 
         ;; ruby, rails, etc.
-        (:name ruby-mode :type elpa)
-        (:name inf-ruby  :type elpa)
-        (:name rvm
-               :type git :url "http://github.com/senny/rvm.el.git"
-               :features rvm)
+        ruby-mode
+        ruby-electric
+        rvm
         rinari
-        (:name yaml-mode :type elpa :features yaml-mode)
-        (:name haml-mode :type elpa)
-        (:name sass-mode :type elpa)
+        (:name inf-ruby :type elpa)
+        yaml-mode
+        haml-mode
+        sass-mode
 
         ;; version control
         gist
-        (:name magit  ;; custom recipe cause different emacs path on my macs
-               :type git
-               :url "http://github.com/philjackson/magit.git"
-               :info "."
-               :build ("make all")
-               :build/darwin
-               ("PATH=~/Applications/Emacs.app/Contents/MacOS:$PATH make all")
-               :features magit)
-        (:name magithub :type git :url "http://github.com/nex3/magithub.git")
+        magit
+        magithub
 
         ;; other
         google-maps
@@ -75,15 +63,6 @@
 
 ;; ensure packages are installed and loaded
 (el-get 'sync)
-
-;; TODO: add el-get-update-all fun from
-;;   http://github.com/purcell/emacs.d/blob/master/init-el-get.el
-
-;; autoloads for packages that don't provide them
-(autoload 'markdown-mode "markdown-mode"
-  "Major mode for editing Markdown documents" t nil)
-(add-to-list 'auto-mode-alist '("\\.md$"       . markdown-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
 
 (provide 'init-packages)
