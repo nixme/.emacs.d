@@ -21,6 +21,7 @@
         full-ack
         smex
         switch-window
+        buffer-move
         (:name undo-tree :features undo-tree)
         (:name hungry-delete :type elpa)
         (:name sr-speedbar   :type emacswiki :features sr-speedbar)

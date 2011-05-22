@@ -60,7 +60,13 @@
 (global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
 
 ;; window management
-(windmove-default-keybindings)  ;; shift + arrow keys
+(windmove-default-keybindings)  ;; shift + arrow keys to switch windows
+;; control + shift + arrow keys to move windows
+(global-set-key (kbd "C-S-<left>")  'buf-move-left)
+(global-set-key (kbd "C-S-<right>") 'buf-move-right)
+(global-set-key (kbd "C-S-<down>")  'buf-move-down)
+(global-set-key (kbd "C-S-<up>")    'buf-move-up)
+;; meta + shift + arrow keys to resize windows
 (global-set-key (kbd "S-M-<left>")  'shrink-window-horizontally)
 (global-set-key (kbd "S-M-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-M-<down>")  'shrink-window)
