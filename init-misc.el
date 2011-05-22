@@ -63,6 +63,9 @@
 ;; transparently open compressed files
 (auto-compression-mode t)
 
+;; auto-reload files that have changed on disk but haven't been modified
+(global-auto-revert-mode t)
+
 ;; use unified diffs
 (setq diff-switches "-u")
 
