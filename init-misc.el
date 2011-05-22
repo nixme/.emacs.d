@@ -106,9 +106,10 @@
 (eval-after-load 'autopair '(autopair-global-mode))
 
 ;; rainbow-mode: color previews in css/html
-(add-to-list 'auto-mode-alist '("\\.css$"  . rainbow-mode))
-(add-to-list 'auto-mode-alist '("\\.sass$" . rainbow-mode))
-(add-to-list 'auto-mode-alist '("\\.html$" . rainbow-mode))
+(defun turn-on-rainbow-colors () (rainbow-mode t))
+(add-hook 'css-mode-hook  'turn-on-rainbow-colors)
+(add-hook 'sass-mode-hook 'turn-on-rainbow-colors)
+(add-hook 'html-mode-hook 'turn-on-rainbow-colors)
 
 ;; coffee-mode: for coffeescript files
 (add-hook 'coffee-mode-hook  ;; use two spaces for indenting
