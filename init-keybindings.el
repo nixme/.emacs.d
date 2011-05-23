@@ -11,6 +11,14 @@
 (global-set-key (kbd "M-f") 'forward-to-word)
 (global-set-key (kbd "M-b") 'backward-to-word)
 
+;; dwim C-a: move to indentation or beginning of line if already there
+(defun beginning-of-indentation-or-line ()
+  (interactive)
+  (if (= (point) (save-excursion (back-to-indentation) (point)))
+      (beginning-of-line)
+    (back-to-indentation)))
+(global-set-key (kbd "C-a") 'beginning-of-indentation-or-line)
+
 ;; easy kill word, also behaves same as shell, but need to remap kill-region too
 (global-set-key (kbd "C-w") 'backward-kill-word)
 (global-set-key (kbd "C-x C-k") 'kill-region)
