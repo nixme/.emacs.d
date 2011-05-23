@@ -124,6 +124,11 @@
 (setq-default save-place t)
 (require 'saveplace)
 
+;; recentf: quickly open recently used files
+(require 'recentf)
+(recentf-mode t)
+(setq recentf-max-saved-items 50)
+
 ;; undo-tree: saner undo and fancy edit history visualization
 (eval-after-load 'undo-tree '(global-undo-tree-mode))
 

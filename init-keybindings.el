@@ -33,6 +33,15 @@
 (global-set-key (kbd "C-x f")   'ido-find-file)  ;; I mistakenly type this often
 (global-set-key (kbd "C-x C-f") 'ido-find-file)  ;; implicit when loading ido
 
+;; find recent file
+(defun ido-find-file-recent ()
+  "Fine a recent file"
+  (interactive)
+  (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
+    (when file
+      (find-file file))))
+(global-set-key (kbd "C-x C-r") 'ido-find-file-recent)
+
 ;; ido-completing M-x using smex + easier keybindings based on Yegge rec
 (global-set-key (kbd "M-x")     'smex)
 (global-set-key (kbd "C-x C-m") 'smex)
