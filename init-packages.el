@@ -35,7 +35,8 @@
         ;; appearance
         color-theme
         theme-roller
-        (:name idle-highlight :type elpa)
+        (:name idle-highlight-mode :type elpa)
+        (:name highlight-parentheses :type elpa)
 
         ;; web, html, js, css, etc.
         (:name css-mode :type elpa)

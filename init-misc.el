@@ -99,6 +99,14 @@
 ;; ethan-wspace: cleanup whitespace on every save
 (eval-after-load 'ethan-wspace '(global-ethan-wspace-mode t))
 
+;; features to be enabled for any programming buffers
+(defun enable-coding-mode-features ()
+  (idle-highlight t)               ;; highlight instances of symbol under cursor
+  (highlight-parentheses-mode t))  ;; color code nested parentheses
+(add-hook 'ruby-mode-hook       'enable-coding-mode-features)
+(add-hook 'js-mode-hook         'enable-coding-mode-features)
+(add-hook 'emacs-lisp-mode-hook 'enable-coding-mode-features)
+
 ;; uniquify: better names for duplicate buffers
 (require 'uniquify)
 
