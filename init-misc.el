@@ -108,7 +108,7 @@
 
 ;; features to be enabled for any programming buffers
 (defun enable-coding-mode-features ()
-  (idle-highlight t)               ;; highlight instances of symbol under cursor
+  (idle-highlight-mode t)          ;; highlight instances of symbol under cursor
   (highlight-parentheses-mode t)   ;; color code nested parentheses
   (auto-fill-mode 1)               ;; auto-wrap comments while typing
   (setq comment-auto-fill-only-comments t))
