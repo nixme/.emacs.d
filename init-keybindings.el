@@ -87,6 +87,9 @@
 (global-set-key (kbd "S-M-<down>")  'shrink-window)
 (global-set-key (kbd "S-M-<up>")    'enlarge-window)
 
+;; magit
+(global-set-key (kbd "C-c g") 'magit-status)
+
 ;; org-mode
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
