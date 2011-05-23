@@ -26,7 +26,6 @@
 
 ;; kill line, same as shell
 (defun backward-kill-line (arg)
-  "Kill chars backward until encountering the end of a line."
   (interactive "p")
   (kill-line 0))
 (global-set-key (kbd "C-u") 'backward-kill-line)
@@ -43,7 +42,6 @@
 
 ;; find recent file
 (defun ido-find-file-recent ()
-  "Fine a recent file"
   (interactive)
   (let ((file (ido-completing-read "Choose recent file: " recentf-list nil t)))
     (when file

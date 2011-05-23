@@ -28,8 +28,8 @@
 ;; unset ruby-electric keybindings for certain paired characters
 ;;   since autopair is much superior for them
 (defun remove-some-electric-bindings ()
-  (loop for char in '("\"" "\'" "(" ")" "{" "}" "[" "]")
-        do (local-unset-key char)))
+  (dolist (char '("\"" "\'" "(" ")" "{" "}" "[" "]"))
+    (local-unset-key char)))
 (add-hook 'ruby-mode-hook 'remove-some-electric-bindings 'append)
 
 
