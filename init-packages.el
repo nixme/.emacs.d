@@ -47,6 +47,7 @@
         ;; ruby, rails, etc.
         ruby-mode
         ruby-electric
+        ruby-compilation
         rvm
         rinari
         (:name inf-ruby :type elpa)
