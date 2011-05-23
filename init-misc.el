@@ -116,6 +116,9 @@
 (add-hook 'js-mode-hook         'enable-coding-mode-features)
 (add-hook 'emacs-lisp-mode-hook 'enable-coding-mode-features)
 
+;; automatically make scripts executable (hashbang as canary)
+(add-hook 'after-save-hook 'executable-make-buffer-file-executable-if-script-p)
+
 ;; uniquify: better names for duplicate buffers
 (require 'uniquify)
 
