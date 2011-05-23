@@ -13,7 +13,7 @@
 ;; font: Menlo 11pt on OS X, Droid Sans Mono 10pt on Linux
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil :family "Menlo" :height 110)
-  (set-face-attribute 'default nil :family "Droid Sans Mono" :height 100))
+  (set-face-attribute 'default nil :family "Droid Sans Mono" :height 90))
 
 ;; UTF-8 baby!
 (setq locale-coding-system 'utf-8)

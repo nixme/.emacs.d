@@ -27,7 +27,7 @@
                       'speedbar-highlight-face))
     (if (eq system-type 'darwin)  ;; Lucida Grande on OS X
         (set-face-attribute face nil :family "Lucida Grande" :height 110)
-      (set-face-attribute face nil :height 110))))
+      (set-face-attribute face nil :family "Droid Sans" :height 100))))
 
 ;; no left fringe and half-size right fringe. TODO: doesn't work
 (add-to-list 'speedbar-frame-parameters '(left-fringe . 0))
