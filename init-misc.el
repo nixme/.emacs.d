@@ -102,7 +102,9 @@
 ;; features to be enabled for any programming buffers
 (defun enable-coding-mode-features ()
   (idle-highlight t)               ;; highlight instances of symbol under cursor
-  (highlight-parentheses-mode t))  ;; color code nested parentheses
+  (highlight-parentheses-mode t)   ;; color code nested parentheses
+  (auto-fill-mode 1)               ;; auto-wrap comments while typing
+  (setq comment-auto-fill-only-comments t))
 (add-hook 'ruby-mode-hook       'enable-coding-mode-features)
 (add-hook 'js-mode-hook         'enable-coding-mode-features)
 (add-hook 'emacs-lisp-mode-hook 'enable-coding-mode-features)
