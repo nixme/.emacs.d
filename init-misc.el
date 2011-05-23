@@ -96,6 +96,13 @@
 (set-face-background 'whitespace-tab     nil)
 (global-whitespace-mode t)   ;; enable whitespace-mode everywhere
 
+;; save autosave and backup files centrally instead of clutering projects
+(defvar dotfiles-tmp-dir (concat dotfiles-dir "tmp/"))
+(setq
+  backup-directory-alist         `(("." . ,(concat dotfiles-tmp-dir "backups")))
+  auto-save-list-file-prefix     (concat dotfiles-tmp-dir "auto-save-sessions/")
+  auto-save-file-name-transforms `((".*" ,(concat dotfiles-tmp-dir "auto-save-files/") t)))
+
 ;; ethan-wspace: cleanup whitespace on every save
 (eval-after-load 'ethan-wspace '(global-ethan-wspace-mode t))
 
