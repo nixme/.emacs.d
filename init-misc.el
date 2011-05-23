@@ -112,6 +112,11 @@
 ;; uniquify: better names for duplicate buffers
 (require 'uniquify)
 
+;; saveplace: remember last position of opened files
+(setq save-place-file (concat dotfiles-dir "saveplace"))
+(setq-default save-place t)
+(require 'saveplace)
+
 ;; undo-tree: saner undo and fancy edit history visualization
 (eval-after-load 'undo-tree '(global-undo-tree-mode))
 
