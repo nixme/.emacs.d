@@ -23,10 +23,11 @@
 (prefer-coding-system 'utf-8)
 (set-language-environment "UTF-8")
 
-;; indentation
+;; indentation and fill
 (setq-default indent-tabs-mode nil  ;; use spaces for indentation
               tab-width        4    ;; display tabs as 4 spaces
-              c-basic-offset   4)
+              c-basic-offset   4
+              fill-column      80)  ;; wrap (fill) text at column 80
 
 ;; modeline
 (line-number-mode t)        ;; show line number in modeline
