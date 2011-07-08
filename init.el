@@ -20,6 +20,7 @@
 ;; common libraries
 (require 'cl)
 (require 'misc)
+(require 'thingatpt)
 
 ;; load all customizations
 (require 'init-packages)

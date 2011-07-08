@@ -8,8 +8,9 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 
 ;; more familiar forward and backward word
-(global-set-key (kbd "M-f") 'forward-to-word)
-(global-set-key (kbd "M-b") 'backward-to-word)
+(global-set-key (kbd "M-f") 'forward-same-syntax)
+(global-set-key (kbd "M-b") (lambda () (interactive)
+                              (forward-same-syntax -1)))
 
 ;; dwim C-a: move to indentation or beginning of line if already there
 (defun beginning-of-indentation-or-line ()
@@ -19,8 +20,20 @@
     (back-to-indentation)))
 (global-set-key (kbd "C-a") 'beginning-of-indentation-or-line)
 
-;; easy kill word, also behaves same as shell, but need to remap kill-region too
-(global-set-key (kbd "C-w") 'backward-kill-word)
+;; saner forward and backward kill-word using thingatpt
+(defun kill-syntax (&optional arg)
+  (interactive "p")
+  (let ((opoint (point)))
+    (forward-same-syntax arg)
+    (kill-region opoint (point))))
+(defun backward-kill-syntax (&optional arg)
+  (interactive)
+  (kill-syntax -1))
+(global-set-key (kbd "M-d") 'kill-syntax)
+(global-set-key (kbd "C-w") 'backward-kill-syntax) ;; same as shell keybinding
+(global-set-key (kbd "C-<backspace>") 'backward-kill-syntax)
+
+;; remap kill-region (cut) since we're using C-w above
 (global-set-key (kbd "C-x C-k") 'kill-region)
 (global-set-key (kbd "C-c C-k") 'kill-region)
 
