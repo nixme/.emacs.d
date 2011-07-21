@@ -150,6 +150,6 @@
           '(lambda () (set (make-local-variable 'tab-width) 2)))
 
 ;; sh-mode for .zsh files
-(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 
 (provide 'init-misc)
