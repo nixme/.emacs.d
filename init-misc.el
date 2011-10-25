@@ -24,10 +24,11 @@
 (set-language-environment "UTF-8")
 
 ;; indentation and fill
-(setq-default indent-tabs-mode nil  ;; use spaces for indentation
-              tab-width        4    ;; display tabs as 4 spaces
+(setq-default indent-tabs-mode nil    ;; use spaces for indentation
+              tab-width        4      ;; display tabs as 4 spaces
               c-basic-offset   4
-              fill-column      80)  ;; wrap (fill) text at column 80
+              fill-column      80)    ;; wrap (fill) text at column 80
+(setq sentence-end-double-space nil)  ;; only 1 space after sentence period
 
 ;; modeline
 (line-number-mode t)        ;; show line number in modeline
