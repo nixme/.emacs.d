@@ -11,8 +11,18 @@
 
 ;; set dependencies for el-get
 (require 'el-get)
-(setq el-get-byte-compile nil   ;; don't compile to bytecode by default
-      el-get-sources
+
+;; Local sources - recipes not included with el-get
+(setq el-get-sources
+      '(
+        (:name hungry-delete :type elpa)
+        (:name eproject
+               :type git :url "http://github.com/jrockway/eproject.git"
+               :features (eproject eproject-extras))
+        (:name idle-highlight-mode :type elpa)
+        (:name highlight-parentheses :type elpa)))
+
+(setq packages
       '(
         ;; basics, editing, projects
         autopair
@@ -22,24 +32,20 @@
         smex
         switch-window
         buffer-move
-        (:name undo-tree :features undo-tree)
-        (:name hungry-delete :type elpa)
-        (:name sr-speedbar   :type emacswiki :features sr-speedbar)
-        (:name linum-off
-               :type elpa
-               :after (lambda() (require 'linum-off)))
-        (:name eproject
-               :type git :url "http://github.com/jrockway/eproject.git"
-               :features (eproject eproject-extras))
+        undo-tree
+        hungry-delete
+        sr-speedbar
+        linum-off
+        eproject
 
         ;; appearance
         color-theme
         theme-roller
-        (:name idle-highlight-mode :type elpa)
-        (:name highlight-parentheses :type elpa)
+        idle-highlight-mode
+        highlight-parentheses
 
         ;; web, html, js, css, etc.
-        (:name css-mode :type elpa)
+        css-mode
         coffee-mode
         rainbow-mode
         markdown-mode
@@ -50,7 +56,7 @@
         ruby-compilation
         rvm
         rinari
-        (:name inf-ruby :type elpa)
+        inf-ruby
         yaml-mode
         haml-mode
         sass-mode
@@ -64,8 +70,9 @@
         google-maps
         google-weather))
 
-;; ensure packages are installed and loaded
-(el-get 'sync)
+;; Ensure packages are installed and loaded
+(el-get 'sync packages)
+(el-get 'wait)
 
 
 (provide 'init-packages)
