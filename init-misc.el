@@ -56,6 +56,7 @@
   scroll-up-aggressively 0
   scroll-down-aggressively 0
   scroll-preserve-screen-position t
+  scroll-error-top-bottom t
   mouse-wheel-scroll-amount '(1 ((shift . 1))))
 
 ;; highlight matching parens
