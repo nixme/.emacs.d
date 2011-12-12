@@ -32,3 +32,6 @@
 (require 'init-org-mode)
 (require 'init-misc)
 (require 'init-keybindings)
+
+;; Start daemon for emacsclient
+(server-start)
