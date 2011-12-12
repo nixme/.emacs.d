@@ -5,3 +5,5 @@ el-get/*
 saveplace
 tmp
 url
+ac-comphist.dat
+eshell/*
