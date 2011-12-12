@@ -41,7 +41,7 @@
 (defun backward-kill-line (arg)
   (interactive "p")
   (kill-line 0))
-(global-set-key (kbd "C-u") 'backward-kill-line)
+(global-set-key (kbd "M-k") 'backward-kill-line)
 
 ;; alias C-h to backspace and redefine help key to C-x ? or C-c ?
 (global-set-key (kbd "C-h") 'backward-delete-char-untabify)
