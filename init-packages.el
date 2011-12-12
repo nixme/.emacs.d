@@ -37,6 +37,7 @@
         sr-speedbar
         linum-off
         eproject
+        fill-column-indicator
 
         ;; appearance
         color-theme
