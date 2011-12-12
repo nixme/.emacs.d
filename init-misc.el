@@ -153,4 +153,7 @@
 ;; sh-mode for .zsh files
 (add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 
+;; mustache-mode for Handlebars .hbs files
+(add-to-list 'auto-mode-alist '("\\.hbs\\'" . mustache-mode))
+
 (provide 'init-misc)

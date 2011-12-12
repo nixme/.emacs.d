@@ -49,6 +49,7 @@
         coffee-mode
         rainbow-mode
         markdown-mode
+        mustache-mode
 
         ;; ruby, rails, etc.
         ruby-mode
