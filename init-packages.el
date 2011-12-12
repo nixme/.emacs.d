@@ -61,6 +61,12 @@
         haml-mode
         sass-mode
 
+        ;; Autocomplete
+        auto-complete
+        auto-complete-ruby
+        auto-complete-etags
+        auto-complete-yasnippet
+
         ;; version control
         gist
         magit
