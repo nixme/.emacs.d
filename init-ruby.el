@@ -27,6 +27,7 @@
 (add-to-list 'auto-mode-alist '("Vagrantfile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Guardfile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '(".metrics\\'" . ruby-mode))
+(add-to-list 'auto-mode-alist '(".irbrc\\'" . ruby-mode))
 
 ;; unset ruby-electric keybindings for certain paired characters
 ;;   since autopair is much superior for them
