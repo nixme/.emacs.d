@@ -20,7 +20,10 @@
                :type git :url "http://github.com/jrockway/eproject.git"
                :features (eproject eproject-extras))
         (:name idle-highlight-mode :type elpa)
-        (:name highlight-parentheses :type elpa)))
+        (:name highlight-parentheses :type elpa)
+        (:name dlacewell-minimap
+               :type git :url "https://github.com/dustinlacewell/emacs-minimap.git"
+               :features minimap)))
 
 (setq packages
       '(
@@ -38,6 +41,7 @@
         linum-off
         eproject
         fill-column-indicator
+        dlacewell-minimap
 
         ;; appearance
         color-theme

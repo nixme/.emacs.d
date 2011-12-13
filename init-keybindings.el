@@ -86,6 +86,7 @@
 (global-set-key (kbd "C-c y") 'bury-buffer)
 (global-set-key (kbd "C-x C-b") 'ibuffer)           ;; use ibuffer instead of buffer-list
 (global-set-key (kbd "C-c t") 'sr-speedbar-toggle)
+(global-set-key (kbd "C-c m") 'minimap-toggle)
 
 ;; window management
 (windmove-default-keybindings)  ;; shift + arrow keys to switch windows
