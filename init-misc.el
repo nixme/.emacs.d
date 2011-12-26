@@ -59,6 +59,9 @@
   scroll-error-top-bottom t
   mouse-wheel-scroll-amount '(1 ((shift . 1))))
 
+;; Echo multi-key commands immediately in the echo area
+(setq echo-keystrokes 0.01)
+
 ;; highlight matching parens
 (show-paren-mode t)
 (setq show-paren-delay 0)
