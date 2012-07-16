@@ -10,6 +10,9 @@
                    window-system)))
     (menu-bar-mode -1))
 
+;; Color theme: Wombat (TEMP TODO)
+(load-theme 'wombat t)
+
 ;; font: Menlo 11pt on OS X, Droid Sans Mono 10pt on Linux
 (if (eq system-type 'darwin)
     (set-face-attribute 'default nil :family "Menlo" :height 110)
@@ -29,6 +32,10 @@
               c-basic-offset   4
               fill-column      80)    ;; wrap (fill) text at column 80
 (setq sentence-end-double-space nil)  ;; only 1 space after sentence period
+
+;; Show fill column indicator in all buffers
+(define-globalized-minor-mode global-fci-mode fci-mode (lambda () (fci-mode 1)))
+(global-fci-mode t)
 
 ;; modeline
 (line-number-mode t)        ;; show line number in modeline
@@ -85,9 +92,6 @@
 (setq
   inhibit-startup-message t
   inhibit-startup-echo-area-message t)
-
-;; ir-black colors via color-theme and theme-roller
-(eval-after-load 'theme-roller '(color-theme-ir-black))
 
 ;; whitespace mode: show tabs, newlines, and highlight chars past column 80
 (require 'whitespace)
@@ -159,5 +163,6 @@
 
 ;; mustache-mode for Handlebars .hbs files
 (add-to-list 'auto-mode-alist '("\\.hbs\\'" . mustache-mode))
+
 
 (provide 'init-misc)

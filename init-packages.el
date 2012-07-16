@@ -3,84 +3,77 @@
 ;; based on Steve Purcell's init-el-get.el
 
 
-;; start ELPA
+;; Start ELPA
 (require 'package)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
 
-;; set dependencies for el-get
 (require 'el-get)
 
 ;; Local sources - recipes not included with el-get
 (setq el-get-sources
       '(
         (:name hungry-delete :type elpa)
-        (:name eproject
-               :type git :url "http://github.com/jrockway/eproject.git"
-               :features (eproject eproject-extras))
         (:name idle-highlight-mode :type elpa)
-        (:name highlight-parentheses :type elpa)
+        (:name gist :type elpa)     ;; gist in Maramalade handles deps better
         (:name dlacewell-minimap
                :type git :url "https://github.com/dustinlacewell/emacs-minimap.git"
                :features minimap)))
 
 (setq packages
       '(
-        ;; basics, editing, projects
-        autopair
-        yasnippet
-        ethan-wspace
-        full-ack
-        smex
-        switch-window
-        buffer-move
-        undo-tree
-        hungry-delete
-        sr-speedbar
-        linum-off
-        eproject
-        fill-column-indicator
-        dlacewell-minimap
+        ;; Basics, editing, projects
+        autopair                       ;; Automatically pair braces and quotes
+        yasnippet                      ;; Template/snippet system
+        ethan-wspace                   ;; Smart whitespace cleanup
+        full-ack                       ;; `ack` front-end
+        smex                           ;; Ido for M-x
+        switch-window                  ;; Visual window switching
+        buffer-move                    ;; Simple buffer swaping between windows
+        undo-tree                      ;; Vim-style undo system with graph
+        hungry-delete                  ;; Hungry delete (whole whitespace deletion) in all modes
+        sr-speedbar                    ;; In-frame Speedbar
+        linum-off                      ;; Easily disable line numbers in some modes
+        eproject                       ;; Project system for grouping files/buffers
+        dlacewell-minimap              ;; Sublime2's MiniMap feature
 
-        ;; appearance
-        color-theme
-        theme-roller
-        idle-highlight-mode
-        highlight-parentheses
+        ;; Appearance
+        fill-column-indicator          ;; Draw a vertical line at fill column
+        idle-highlight-mode            ;; Highlight all occurrences of word at point
+        highlight-parentheses          ;; Highlight matching parentheses at point
+        rainbow-mode                   ;; Colorize colors (hex, names)
+        powerline                      ;; Fancy modeline
 
-        ;; web, html, js, css, etc.
-        css-mode
-        coffee-mode
-        rainbow-mode
-        markdown-mode
-        mustache-mode
+        ;; Web, HTML, JS, CSS, etc.
+        css-mode                       ;; CSS minor mode
+        coffee-mode                    ;; CoffeeScript major mode
+        markdown-mode                  ;; Markdown major mode
+        mustache-mode                  ;; Mustache templates major mode
+        haml-mode                      ;; Haml templates major mode
+        sass-mode                      ;; SASS major mode
 
-        ;; ruby, rails, etc.
-        ruby-mode
-        ruby-electric
-        ruby-compilation
-        rvm
-        rinari
-        inf-ruby
+        ;; Ruby, Rails, etc.
+        ruby-mode                      ;; Ruby major mode
+        ruby-electric                  ;; Electric commands for Ruby
+        ruby-compilation               ;; Run ruby processes into compilation buffers
+        rinari                         ;; Rails minor mode
+        inf-ruby                       ;; Inferior Ruby mode
         yaml-mode
-        haml-mode
-        sass-mode
 
         ;; Autocomplete
-        auto-complete
-        auto-complete-ruby
-        auto-complete-etags
-        auto-complete-yasnippet
+        auto-complete                  ;; Intelligent auto-completion system
+        auto-complete-etags            ;; Auto-complete from etags
+        auto-complete-yasnippet        ;; Auto-complete from snippets/templates
 
-        ;; version control
-        gist
-        magit
-        magithub
+        ;; Version control
+        gist                           ;; Github Gist integration
+        magit                          ;; Git interface and modes
+        magithub                       ;; Magit extensions for Github
 
-        ;; other
-        google-maps
-        google-weather))
+        ;; Other
+        google-maps                    ;; Google Maps in Emacs :)
+        google-weather))               ;; Google Weather in Emacs
 
 ;; Ensure packages are installed and loaded
 (el-get 'sync packages)
