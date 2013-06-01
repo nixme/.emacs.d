@@ -108,32 +108,7 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 
-;; eproject
-;;   C-c  f      current project find file
-;;   C-c C-f     current project find file (defined in eproject-extras.el)
-;;   C-c  b      current project ibuffer
-;;   C-c C-b     current project ibuffer   (defined in eproject-extras.el)
-;;   C-c C-c     current project eshell
-;;   C-c C-o     current project open all files
-;;   C-x  p  f   any project find file
-;;   C-x  p  b   any project ibuffer
-;;   C-x  p  o   any project open all files
-;;   C-x  p  k   any project kill all files
-;;   C-x  p  v   any project visit directory
-(define-key eproject-mode-map (kbd "C-c f")   'eproject-find-file)
-(define-key eproject-mode-map (kbd "C-c b")   'eproject-ibuffer)
-(define-key eproject-mode-map (kbd "C-c C-c") 'eproject-eshell-cd-here)
-(define-key eproject-mode-map (kbd "C-c C-o") 'eproject-open-all-project-files)
-(global-set-key (kbd "C-x p f") (lambda () (interactive)
-                                  (eproject-revisit-project 4)))
-(global-set-key (kbd "C-x p b") (lambda () (interactive)
-                                  (eproject-ibuffer 4)))
-(global-set-key (kbd "C-x p o") (lambda () (interactive)
-                                  (eproject-open-all-project-files 4)))
-(global-set-key (kbd "C-x p k") (lambda () (interactive)
-                                  (eproject-kill-project-buffers 4)))
-(global-set-key (kbd "C-x p v") (lambda () (interactive)
-                                  (eproject-revisit-project 1)))
+(global-set-key (kbd "M-o") 'projectile-find-file)
 
 
 (provide 'init-keybindings)
